@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+    {{category.description| truncatewords:155}}
+      {% else %}
+         welcome to nammude shop..
+    {% endif %}
+{% endblock %}
+
+
+{% block title %}
+   {% if category %}
+      {{category.name}}-nammude store
+   {% else %}
+         see our new collections
+   {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+   {% if category %}
+
+
+          <div class="container">
+                 <div class="row my-row-class mx-auto">
+               <P><a href="{%url  'shop:allproductcat' %}">our products</a></P>
+           </div>
+               </div>
+
+   {% endif %}
+
+<div class="container">
+   <div class="mx-auto">
+       {% if category %}
+          <img class="my-image my-image-padding"    src="{{category.image.url}}" alt="{{category.name}}" >
+   </div>
+   <br>
+
+   <div class="">
+       <h1 class="text-center my-title">{{category.name}}</h1>
+       <p class="text-justify ">  {{category.description}}</p>
+
+   </div >
+        {% else %}
+           <div>
+               <img class="my-image image-padding center" src="{% static 'img/banner1.png' %}" alt="our products">
+           </div>
+
+</div>
+
+<br>
+
+   <div>
+       <h1 class="text-center my-title">our product collections</h1>
+       <p class="text-justify">  Your store may look empty, right after installing WooCommerce — no products, orders, reviews. This is intentional so you can get started creating your own products and setting up WooCommerce exactly as you need.</p>
+   </div>
+   {% endif %}
+
+
+
+
+
+
+<div class="container">
+        <div class=" row mx-auto">
+
+      {% for product in products.object_list %}
+            <div class=" my-bottom margin col-9 col-sm-12 col-md-4 co-lg-4 " >
+      <div class="card-style" >
+    <a href="{{product.get_url}}"> <img  class=" card-img-top image-style" src="{{product.image.url}}" height="300px"> </a>
+
+       <div class="card-body">
+       <h5 class="my-title">{{product.name}} </h5>
+      <p class="text-justify price">₹{{product.price}}/- only</p>
+
+      </div>
+  </div>
+</div>
+
+   {% endfor %}
+            </div>
+   <div class="mx-auto">
+       {% if products.paginator.num_pages > 1 %}
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}active{% endif %}">{{pg}}</a>
+            {% endfor %}
+        </div>
+       {% endif %}
+   </div>
+
+  </div>
+
+{% endblock %}

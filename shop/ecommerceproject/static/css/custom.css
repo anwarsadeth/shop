@@ -1,0 +1,113 @@
+.nav-item{
+
+        letter-spacing:.2em;
+        font-size:14px;
+        text-transform:uppercase;
+
+    }
+.dropdown-item{
+         letter-spacing:.2em;
+        font-size:14px;
+        text-transform:uppercase;
+    }
+body{
+font-size:20px;
+    font-family: 'Roboto', sans-serif;
+
+
+
+}
+header{
+
+   padding:-top:10px;
+   height:250px;
+
+
+}
+.my-footer{
+
+       padding-top:20px;
+       font-size:20px;
+       text-transform:uppercase;
+        align:center;
+
+}
+.my-footer p{
+       background-color:grey;
+
+
+}
+.my-image{
+    padding-top:15px;
+    height=700x;
+    width=100%;
+
+
+}
+.center {
+  display: block;
+  margin-left: 20px;
+  margin-right: 25px;
+  width: 100%;
+}
+.my-title{
+text-transform:uppercase;
+padding:15px;
+letter-spacing:.1em;
+ font-family: 'Roboto', sans-serif;
+
+
+}
+.my-title h5{
+
+color:blue;
+
+
+}
+
+.my-bottom-margin{
+
+       bottom-margin:10px;
+
+
+}
+.style-image{
+
+width=500px;
+height=500px;
+}
+.card-style {
+  --background: #fff;
+  --background-checkbox: #0082ff;
+  --background-image: #fff, #{rgba(#006baf, 0.2)};
+  --text-color: #666;
+  --text-headline: #000;
+  --card-shadow: #0082ff;
+  --card-height: 190px;
+  --card-width: 190px;
+  --card-radius: 12px;
+  --header-height: 47px;
+  --blend-mode: overlay;
+  --transition: 0.15s;
+  user-select: none;
+}
+.price-product{
+    color:blue;
+    font-size:20px;
+
+
+
+}
+.prod-out{
+color:red;
+font-size:25px;
+
+
+
+}
+custom_a {
+
+text-decoration:none;
+
+ vertical-align: bottom;
+}
